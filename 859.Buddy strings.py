@@ -1,3 +1,5 @@
+#using DP
+#O(n)
 class Solution:
     def buddyStrings(self, a: str, b: str) -> bool:
         x=list(a)
