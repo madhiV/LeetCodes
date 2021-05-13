@@ -1,0 +1,28 @@
+#division method
+class Solution:
+    q,r="0","0"
+    def largestDivisor(self,d):
+        self.r+=str(d)
+        for i in range(9,-1,-1):
+            if int(self.r)-int(str(int(self.q)*2)+str(i))*i<0:
+                continue
+            if i==0:
+                self.q+=str(0)
+                break
+            self.r=str(int(self.r)-int(str(int(self.q)*2)+str(i))*i)
+            self.q+=str(i)
+            break
+    def mySqrt(self, x: int) -> int:
+        x=str(x)
+        if len(x)%2==1:#odd number of digits
+            q="0"
+            self.largestDivisor(x[0])
+            x=x[1:]
+            while x!="":
+                self.largestDivisor(x[0:2])
+                x=x[2:]
+        else:#even number of digits
+            while x!="":
+                self.largestDivisor(x[0:2])
+                x=x[2:]
+        return int(self.q)
