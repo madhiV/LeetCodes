@@ -19,7 +19,10 @@ class Solution {
         }        
     }
     public int partition(int[] arr,int l,int r){
-        int i,j,pivot=arr[l];
+        int i,j,k=(l+r)/2;
+        int pivot=arr[k];
+        arr[k]=arr[l];
+        arr[l]=pivot;
         i=l;
         j=r;
         while(i<j){
