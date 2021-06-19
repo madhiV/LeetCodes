@@ -12,4 +12,6 @@ class Solution:
         while j < len(word2):
             res+=word2[j]
             j+=1
+
+
         return res
