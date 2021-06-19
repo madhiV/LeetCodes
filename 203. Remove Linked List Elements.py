@@ -16,4 +16,6 @@ class Solution:
                 continue
             old=p
             p=p.next
+
+
         return head
